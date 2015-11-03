@@ -3,18 +3,18 @@ class NotesController < ApplicationController
   before_action :authenticate_user!, except: [:index]
 
   def index
-    @notes = Note.all
+    @notes = Note.where(user_id: current_user).order("created_at DESC")
   end
 
   def show
   end
 
   def new
-    @note = Note.new
+    @note = current_user.notes.build
   end
 
   def create
-    @note = Note.new(note_params)
+    @note = current_user.notes.build(note_params)
 
     respond_to do |format|
       if @note.save
@@ -57,6 +57,6 @@ class NotesController < ApplicationController
   end
 
   def note_params
-    params.require(:note).permit(:title, :description, :file, :attachment)
+    params.require(:note).permit(:title, :description, :file, :attachment, :user_id)
   end
 end
