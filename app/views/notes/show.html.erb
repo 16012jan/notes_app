@@ -1,4 +1,12 @@
 <h1><%= @note.title %></h1>
+
+<% if @note.attachment? %>
+  <p class="alert alert-warning" >
+    <span class="glyphicon glyphicon-file"></span><%= link_to @note.attachment, @note.attachment_url %>
+  </p>
+<% end %>
+
+
 <p><%= @note.description %></p>
 
 <%= link_to "Back", notes_path %>
