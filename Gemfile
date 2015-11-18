@@ -18,6 +18,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'carrierwave'
+gem 'fog', '~> 1.36'
 gem 'devise'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
