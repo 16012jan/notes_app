@@ -16,3 +16,40 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+body {
+  padding-top: 50px;
+}
+
+a:hover {
+    text-decoration: none;
+  }
+
+ul {
+  list-style-type: none;
+}
+
+.gravatar {
+  border-radius: 50px;
+}
+
+.page-wrapper {
+  padding-top: 100px;
+}
+
+.list-item {
+  font-size: 2em;
+  padding: 5px 15px;
+
+  &:hover {
+    background-color: #e8fcef;
+  }
+}
+
+.alert.alert-warning {
+  background-color: #e8fcef;
+  border: 1px solid #7edba1;
+}
+
+.btn {
+  border-radius: 0;
+}
