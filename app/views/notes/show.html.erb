@@ -1,14 +1,15 @@
-<h1><%= @note.title %></h1>
-
+<h1><%= @note.title.capitalize %></h1>
+<hr>
 <% if @note.attachment? %>
-  <p class="alert alert-warning" >
-    <span class="glyphicon glyphicon-file"></span><%= link_to @note.attachment, @note.attachment_url %>
+  <p class="alert alert-warning">
+    <span class="glyphicon glyphicon-file"></span><%= link_to @note.attachment.file.filename, @note.attachment_url %>
   </p>
 <% end %>
 
-
 <p><%= @note.description %></p>
-
-<%= link_to "Back", notes_path %>
-<%= link_to "Edit", edit_note_path %>
-<%= link_to "Delete", note_path, method: :delete %>
+<hr>
+<div class="btn-group">
+<%= link_to "Back", notes_path, class: "btn btn-warning" %>
+<%= link_to "Edit", edit_note_path, class: "btn btn-warning" %>
+<%= link_to "Delete", note_path, method: :delete, class: "btn btn-warning" %>
+</div>

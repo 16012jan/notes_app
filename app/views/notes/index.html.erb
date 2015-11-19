@@ -1,7 +1,9 @@
 <h1>Notes</h1>
+<hr>
+<ul class="list-group">
 <% @notes.each do |note| %>
-  <h2><%= link_to note.title, note_path(note) %></h2>
+  <li class="list-item"><%= link_to note.title.capitalize, note_path(note) %></li>
 <% end %>
-
-
+</ul>
+<hr>
 <%= link_to "New note", new_note_path, class: "btn btn-warning" %>
